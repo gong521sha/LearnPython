@@ -36,15 +36,16 @@ print(fact2(100))
 #大梵天创造世界的时候做了三根金刚石柱子，在一根柱子上从下往上按照大小顺序摞着64片黄金圆盘。大梵天命令婆罗门把圆盘从下面开始按大小顺序重新摆放在另一根柱子上。并且规定，在小圆盘上不能放大圆盘，在三根柱子之间一次只能移动一个圆盘。
 mn=0
 def move(n,a,b,c):
+    global mn
     if n<=0 or (not isinstance(n,int)):
         raise TypeError('参数必须为正且为整数')
     elif n==1:
+        mn=mn+1
         print(a,'-->',c)
     else:
-        mn=mn+1
         move(n-1,a,c,b) #子目标1：将a柱的n-1个盘移动到b柱上
         move(1,a,b,c) #子目标2：将a柱的最后一个盘移动到c柱上
         move(n-1,b,a,c) #子目标3：将b柱的盘移动到c柱上
 move(2,'A','B','C')
-print(move_numvber)
+print('移动次数为：',mn)
 #递归函数的应用就在于把问题抽象化，找到其中的规律，也就是把大的目标转化成小的可循环的子目标。
