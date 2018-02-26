@@ -49,3 +49,16 @@ def move(n,a,b,c):
 move(2,'A','B','C')
 print('移动次数为：',mn)
 #递归函数的应用就在于把问题抽象化，找到其中的规律，也就是把大的目标转化成小的可循环的子目标。
+
+#Fibonacci
+#Fibonacci数列的表达式f(0)=0,f(1)=1,f(n)=f(n-1)+f(n-2) (n>=2,n是自然数)
+L=[]
+def Fibonacci(n):#输出前n个斐波那契数列
+    if (n==0):
+        L[0]=0
+    elif(n==1):
+        L[1]=1
+    else:
+        L[n]=L[n-2]+L[n-1]
+
+
