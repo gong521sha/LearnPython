@@ -83,7 +83,7 @@ def decorator_logging(level):
 def foo():
     print('foo')
 
-foo()
+print(foo.__name__)
 
 '''
 上面的等效于foo = decorator_logging('warn')(foo),我们来剖析上面的语句，首先执行decorator_logging('warn')，返回的
@@ -107,11 +107,7 @@ def decorator_logging(text):
 这里解决最后一个问题，就是wrapper()函数为什么要使用*args, **kwargs作为参数，假如上面的例子中foo()函数是有参数的，那么wrapper()
 就必须要带相对应个数的参数，那么通用性就无法实现了。我们知道*args表示可变参数，**kwargs表示关键字参数，所有函数的参数都可以表示成这种形式。
 所以wrapper(*args, **kw)是适配了所有函数的参数类型
-'''    
-
-
-
-
+'''
 
 
 
